@@ -16,14 +16,17 @@ open class Mueble{ //Especialización
 
 class Mesa(material:String, pesoKg: Double, ruedas: Boolean): Mueble() {
     var superficie=""
+    var patas=0
+    var cargaKg=0
 }
 
 class Armario(material:String ,peso: Float,ruedas: Boolean): Mueble() {
     var numPuertas=0
     var empotrado=false
+    var tablas=0
 }
 
-open class Unifamiliar(squareMt:Double,plantas:Int,habitaciones:Int,banos:Int) {
+open class Unifamiliar(squareMt:Double,plantas:Int,habitaciones:Int,banos:Int) { // Extensión
     var squareMt=squareMt
     var plantas=plantas
     var habitaciones=habitaciones

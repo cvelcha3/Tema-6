@@ -14,15 +14,15 @@ fun main(args: Array<String>) {
     println(numbersRev)
 }
 
-class Pila{
-    private var pila = mutableListOf<Any>()
-    fun tope(): Any{
+class Pila<T>{
+    private var pila = mutableListOf<T>()
+    fun tope(): T{
         return pila.last()
     }
-    fun push(valor: Any){
+    fun push(valor: T){
         pila.add(valor)
     }
-    fun pop(): Any? {
+    fun pop(): T? {
         return pila.removeLastOrNull()
     }
     fun empty(): Boolean{
@@ -31,9 +31,9 @@ class Pila{
 
 }
 
-fun reverse(lista: List<Any>): List<Any?> {
-    var pila1=Pila()
-    var listaReversed= mutableListOf<Any?>()
+fun <T> reverse(lista: List<T>): List<T?> {
+    var pila1=Pila<T>()
+    var listaReversed= mutableListOf<T?>()
     var listaIterator = lista.listIterator()
     while (listaIterator.hasNext()){
         pila1.push(listaIterator.next())
