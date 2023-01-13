@@ -5,6 +5,8 @@ fun main(args: Array<String>) {
     Casa1=Chalet(52.4,3,5,1)
 }
 
+//Mueble(superclase) y mesa/armario(clases hijas) son un ejemplo de especialización ya que mesa y armario son tipos específicos de mueble, con características adicionales
+
 open class Mueble{ //Especialización
     var material=""
     var pesoKg=0
@@ -25,6 +27,12 @@ class Armario(material:String ,peso: Float,ruedas: Boolean): Mueble() {
     var empotrado=false
     var tablas=0
 }
+
+//Mueble(superclase) y mesa/armario(clases hijas) son un ejemplo de especialización ya que mesa y armario son tipos específicos de mueble, con características adicionales
+//Unifamiliar(superclase) y piso/chalet(clases hijas) son un caso de extensión, ya que las
+//clases hijas heredan de unifamiliar, que más que ser un caso más general es simplemente otro tipo de vivienda, del que las hijas extienden la funcionalidad.
+//Se podrían definir todas las propiedades del padre directamente en las clases hijas con los mismos tipos de datos, pero sería más tosco. Por ejemplo,
+//respecto a construcción, puedo acceder a las propiedades que quiera, ya que en el caso de construcción son privadas para la encapsulación.
 
 open class Unifamiliar(squareMt:Double,plantas:Int,habitaciones:Int,banos:Int) { // Extensión
     var squareMt=squareMt
